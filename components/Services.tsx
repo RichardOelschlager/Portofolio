@@ -114,13 +114,38 @@ export default function Services() {
                   </svg>
                 </div>
               </button>
+
+              {/* Inline example — mobile only, shown directly below each card */}
+              <div
+                className={`sm:hidden mt-3 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  active === i ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                {active === i && (
+                  <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-2">
+                    <div className="bg-slate-100 rounded-t-2xl px-4 py-3 flex items-center gap-3">
+                      <div className="flex gap-1.5">
+                        <span className="w-3 h-3 rounded-full bg-red-400" />
+                        <span className="w-3 h-3 rounded-full bg-yellow-400" />
+                        <span className="w-3 h-3 rounded-full bg-green-400" />
+                      </div>
+                      <div className="flex-1 bg-white rounded-lg px-3 py-1 text-xs text-muted truncate">
+                        https://ert-foretag.se
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-b-2xl overflow-hidden border-t border-slate-100">
+                      <div className="animate-float">{s.example}</div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Expanded example preview */}
+        {/* Expanded example preview — desktop only (sm+) */}
         <div
-          className={`mt-8 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`hidden sm:block mt-8 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             active !== null ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
